@@ -50,7 +50,7 @@ const Favoritos = () => {
           onClick={eliminarTodos}
           className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 text-sm"
         >
-          🗑️ Eliminar todos
+          Eliminar todos
         </button>
       </div>
     </div>
