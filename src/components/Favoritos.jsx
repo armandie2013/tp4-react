@@ -39,7 +39,7 @@ const Favoritos = () => {
               onClick={() => eliminarFavorito(personaje.id)}
               className="mt-4 px-3 py-1 text-sm bg-red-600 text-white rounded hover:bg-red-700"
             >
-              ❌ Quitar de favoritos
+              Quitar
             </button>
           </div>
         ))}
