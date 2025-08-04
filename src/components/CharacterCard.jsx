@@ -4,17 +4,17 @@ const CharacterCard = ({ personaje }) => {
   const { agregarFavorito } = useFavoritos();
 
   return (
-    <div className="bg-white dark:bg-slate-800 rounded shadow p-4 flex flex-col items-center text-center">
+    <div className="bg-slate-100 dark:bg-slate-800 rounded shadow p-4 flex flex-col items-center text-center">
       <img
         src={personaje.image}
         alt={personaje.name}
         className="w-32 h-32 rounded-full mb-4"
       />
       <h2 className="text-lg font-bold">{personaje.name}</h2>
-      <p className="text-sm text-gray-600 dark:text-gray-300">
+      <p className="text-sm text-slate-700 dark:text-slate-300">
         {personaje.species} - {personaje.status}
       </p>
-      <p className="text-sm text-gray-500 dark:text-gray-400">
+      <p className="text-sm text-slate-600 dark:text-slate-400">
         {personaje.location.name}
       </p>
       <button

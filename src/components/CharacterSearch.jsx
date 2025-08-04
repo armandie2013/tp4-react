@@ -16,15 +16,16 @@ const CharacterSearch = () => {
     setCargando(true);
     setError(null);
 
+    // comsumimos el link de la api que esta en la variable de entorno //
     const texto = nombre.toLowerCase();
-    let url = "https://rickandmortyapi.com/api/character/?";
+    let url = `${import.meta.env.VITE_API_URL}?`;
 
     if (["alive", "dead", "unknown"].includes(texto)) {
       url += `status=${texto}`;
     } else if (["male", "female", "genderless"].includes(texto)) {
       url += `gender=${texto}`;
     } else if (["human", "alien"].includes(texto)) {
-      url += `species=${texto}`;;
+      url += `species=${texto}`;
     } else {
       url += `name=${encodeURIComponent(nombre)}`;
     }
@@ -57,7 +58,7 @@ const CharacterSearch = () => {
           placeholder="Buscar personaje"
           value={nombre}
           onChange={(e) => setNombre(e.target.value)}
-          className="flex-1 px-4 py-2 rounded bg-white text-black dark:bg-slate-700 dark:text-white"
+          className="flex-1 px-4 py-2 rounded bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-white"
         />
 
         <input
@@ -67,12 +68,12 @@ const CharacterSearch = () => {
           placeholder="Cantidad"
           value={cantidad}
           onChange={(e) => setCantidad(e.target.value)}
-          className="w-28 px-4 py-2 rounded bg-white text-black dark:bg-slate-700 dark:text-white"
+          className="w-28 px-4 py-2 rounded bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-white"
         />
 
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         >
           Buscar
         </button>
