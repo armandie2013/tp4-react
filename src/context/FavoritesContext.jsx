@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const FavoritesContext = createContext();
 
@@ -15,6 +16,9 @@ export const FavoritesProvider = ({ children }) => {
   const agregarFavorito = (personaje) => {
     if (!favoritos.find((p) => p.id === personaje.id)) {
       setFavoritos([...favoritos, personaje]);
+      toast.success("Agregado a favoritos");
+    } else {
+      toast.info("Este personaje ya esta en favoritos");
     }
   };
 
