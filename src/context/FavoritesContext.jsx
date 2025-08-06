@@ -18,7 +18,9 @@ export const FavoritesProvider = ({ children }) => {
       setFavoritos([...favoritos, personaje]);
       toast.success("Agregado a favoritos");
     } else {
-      toast.info("Este personaje ya esta en favoritos");
+      toast.info("Este personaje ya esta en favoritos", {
+        toastId: `duplicado-${personaje.id}`,
+      });
     }
   };
 
